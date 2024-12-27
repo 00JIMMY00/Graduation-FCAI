@@ -9,8 +9,7 @@ PERSON_NAME = "Ahmed"
 VIDEO_URL = "http://192.168.1.35:8080/video"
 
 def create_folder(name):
-    face_recognition_folder = "face_recognition"
-    dataset_folder = os.path.join(face_recognition_folder, "dataset")
+    dataset_folder = os.path.join("face_recognition/src/assets", "dataset")
     
     if not os.path.exists(dataset_folder):
         os.makedirs(dataset_folder)

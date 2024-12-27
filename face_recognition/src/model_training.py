@@ -5,10 +5,13 @@ import pickle
 import cv2
 
 print("[INFO] start processing faces...")
-imagePaths = list(paths.list_images("dataset"))
+# Update the dataset path if necessary
+imagePaths = list(paths.list_images("face_recognition/src/assets/dataset"))
 knownEncodings = []
 knownNames = []
+print(imagePaths)
 
+# Process each image
 for (i, imagePath) in enumerate(imagePaths):
     print(f"[INFO] processing image {i + 1}/{len(imagePaths)}")
     name = imagePath.split(os.path.sep)[-2]
@@ -23,9 +26,12 @@ for (i, imagePath) in enumerate(imagePaths):
         knownEncodings.append(encoding)
         knownNames.append(name)
 
+# Specify the path for the encodings file inside assets
+pickle_file_path = "face_recognition/src/assets/encodings.pickle"
+
 print("[INFO] serializing encodings...")
 data = {"encodings": knownEncodings, "names": knownNames}
-with open("encodings.pickle", "wb") as f:
+with open(pickle_file_path, "wb") as f:
     f.write(pickle.dumps(data))
 
-print("[INFO] Training complete. Encodings saved to 'encodings.pickle'")
+print(f"[INFO] Training complete. Encodings saved to '{pickle_file_path}'")

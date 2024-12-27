@@ -3,17 +3,19 @@ import cv2
 import numpy as np
 import time
 import pickle
-
+from helpers.config import get_settings
 
 # Load pre-trained face encodings
 print("[INFO] loading encodings...")
-with open("encodings.pickle", "rb") as f:
+pickle_file_path = "face_recognition/src/assets/encodings.pickle"
+
+with open(pickle_file_path, "rb") as f:
     data = pickle.loads(f.read())
 known_face_encodings = data["encodings"]
 known_face_names = data["names"]
 
 # Initialize the camera with the video stream URL
-video_capture = cv2.VideoCapture("http://192.168.1.35:8080/video")
+video_capture = cv2.VideoCapture(get_settings().CAMER_INPUT)
 
 # Initialize our variables
 cv_scaler = 4 # this has to be a whole number

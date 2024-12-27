@@ -1,5 +1,3 @@
-# الهيعدل فى ال main هقعدوا على بتاعي
-
 ### Project Tree :
    
 - face_recognition
