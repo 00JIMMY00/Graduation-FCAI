@@ -4,7 +4,7 @@ import time
 import pickle
 import numpy as np
 import face_recognition
-from  helpers.config import get_settings
+from helpers.config import get_settings
 
 class FacialRecognition:
     def __init__(self, encodings_path, video_source):
