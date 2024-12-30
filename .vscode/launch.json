@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "pythonPath": "/media/xxx/New Volume/Graduation-Project-FCAI/face_rec_env/bin/python3"
+        }
+    ]
+}

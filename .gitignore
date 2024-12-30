@@ -1,3 +1,4 @@
 .venv
 dataset
 face_rec_env
+__pychache__
